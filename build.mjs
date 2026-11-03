@@ -1,0 +1,1 @@
+import fs from 'node:fs';import path from 'node:path';fs.rmSync('dist',{recursive:true,force:true});fs.mkdirSync('dist',{recursive:true});for(const f of ['index.html','server.mjs'])fs.copyFileSync(f,path.join('dist',f));for(const d of ['src','public'])fs.cpSync(d,path.join('dist',d),{recursive:true});console.log('Production files generated in dist/');
